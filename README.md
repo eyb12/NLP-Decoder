@@ -13,4 +13,6 @@ pip install sacrebleu rouge_score bert_score
 ```
 
 ## How to use
-Although the script already
+You can run `decoder_llama2_visualize.py` to generate the figures found in `/figures/`. Prompts can be changed to see the token probabilities for each of the selected layers for different prompts.
+
+Check `/figures/` for 10 different prompts and the token probability distributions for each of the selected layers: 8, 16, 24, 32
