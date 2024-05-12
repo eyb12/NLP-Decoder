@@ -27,14 +27,9 @@ def generate_response(model, tokenizer, prompt, system_prompt, layers):
     return response.strip(), top_tokens_decoded, top_probs
  
 def main():
-    # Read the API token from the file
-    with open('cred.txt', 'r') as file:
-        hf_api_token = file.read().strip()
- 
     # Load the model and tokenizer with Hugging Face API token
-    tokenizer = AutoTokenizer.from_pretrained("meta-llama/Llama-2-7b-chat-hf", token=hf_api_token)
-    quantization_config = BitsAndBytesConfig(load_in_4bit=False, load_in_8bit=True)
-    model = AutoModelForCausalLM.from_pretrained("meta-llama/Llama-2-7b-chat-hf", quantization_config=quantization_config, token=hf_api_token)
+    tokenizer = AutoTokenizer.from_pretrained("../../models/Llama-2-7b-chat-hf")
+    model = AutoModelForCausalLM.from_pretrained("../../models/Llama-2-7b-chat-hf")
  
     system_prompt = "You are a helpful AI assistant, who answers very concisely. If you can give the answer in one word, you should do so."
     prompts = [
