@@ -11,3 +11,6 @@ pip install einops
 pip install vllm==0.2.7
 pip install sacrebleu rouge_score bert_score
 ```
+
+## How to use
+Although the script already
